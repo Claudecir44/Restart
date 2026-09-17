@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -15,8 +15,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
             android:text="@string/tela_titulo"
-            android:textColor="@color/ambar_escuro"
+            android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -24,19 +25,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="4dp"
             android:text="@string/tela_subtitulo"
             android:textColor="@color/grafite"
             android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/btnEscolherFoto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/botao_ambar"
-            android:text="@string/botao_escolher_foto"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
 
         <!-- Só aparece depois que uma foto é escolhida (ver
              MainActivity.exibirFoto). -->
@@ -359,11 +351,32 @@
                     android:background="@drawable/botao_grafite"
                     android:text="@string/botao_compartilhar"
                     android:textColor="@color/white"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <!-- Empurra o botão Escolher/Trocar foto pro final da tela — some
+             (0dp) quando o conteúdo acima já preenche a tela inteira
+             (depois que uma foto é processada), mas quando ainda não tem
+             foto (containerFoto oculto), expande e deixa o botão colado no
+             rodapé em vez de logo abaixo do subtítulo. -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnEscolherFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/botao_ambar"
+            android:text="@string/botao_escolher_foto"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
