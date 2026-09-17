@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Só necessária até o Android 9 (API 28) — a partir do 10 (API 29,
          armazenamento com escopo) salvar no MediaStore não exige essa
@@ -48,6 +49,23 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <!-- TEMPORÁRIO — remover quando o projeto Firebase do Restart
+             existir de verdade e google-services.json for adicionado.
+             Sem isso, o app CRASHA AO ABRIR: o FirebaseInitProvider (vem
+             junto das libs firebase-auth/firebase-functions, registrado
+             automaticamente no manifesto por elas) tenta ler recursos tipo
+             google_app_id que só existem quando o plugin google-services
+             roda de verdade (ver app/build.gradle.kts, temGoogleServices) —
+             sem google-services.json esses recursos não existem, e o
+             provider quebra antes até da MainActivity abrir. Com ele
+             removido, IaNuvemRepository/RestartApplication tratam "Firebase
+             não configurado" normalmente (try/catch), em vez do app
+             inteiro morrer no início. -->
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="${applicationId}.firebaseinitprovider"
+            tools:node="remove" />
 
     </application>
 

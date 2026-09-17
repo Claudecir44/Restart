@@ -28,7 +28,15 @@ sealed class ResultadoIa {
 // já cuida do polling por dentro, quem chama não precisa saber que por
 // trás são duas requisições.
 class IaNuvemRepository {
-    private val functions = FirebaseFunctions.getInstance()
+    // "by lazy" (não no construtor) — enquanto o projeto Firebase do
+    // Restart não existir de verdade (ver AndroidManifest.xml,
+    // FirebaseInitProvider removido), FirebaseFunctions.getInstance() lança
+    // IllegalStateException; se isso rodasse no construtor, quebrava a
+    // MainActivity inteira (ela guarda um IaNuvemRepository como
+    // propriedade) mesmo pra quem só quer usar os efeitos locais. Adiado
+    // assim, o erro só aparece (e é tratado, ver processar()) quando o
+    // usuário realmente toca num botão de IA.
+    private val functions by lazy { FirebaseFunctions.getInstance() }
 
     suspend fun processar(
         operacao: OperacaoIa,
