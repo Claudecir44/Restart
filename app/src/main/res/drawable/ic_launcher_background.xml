@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Navy do fundo da arte oficial do ícone (ver Desktop/Restart/Modelo
+         01.png) — continuidade visual atrás do foreground recortado pelo
+         ícone adaptativo. -->
+    <solid android:color="#12194A" />
+</shape>

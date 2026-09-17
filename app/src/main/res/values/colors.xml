@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta do Restart: âmbar/sépia, remetendo a foto antiga/revelação —
+         diferente do azul do Caronas e do vermelho do Match. -->
+    <color name="ambar">#FF8F00</color>
+    <color name="ambar_escuro">#E65100</color>
+    <color name="grafite">#3E2723</color>
+    <color name="fundo_claro">#FFF8F0</color>
+    <color name="borda_sutil">#E0D5C8</color>
+    <color name="verde_sucesso">#2E7D32</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

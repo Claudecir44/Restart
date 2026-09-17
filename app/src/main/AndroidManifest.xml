@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Só necessária até o Android 9 (API 28) — a partir do 10 (API 29,
+         armazenamento com escopo) salvar no MediaStore não exige essa
+         permissão. O Photo Picker usado pra IMPORTAR a foto (ver
+         MainActivity.escolherFoto) não precisa de permissão nenhuma, em
+         qualquer versão. -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <!-- Só usada pela seção "IA na nuvem" (ver IaNuvemRepository,
+         functions/index.js) — os efeitos locais (RestauracaoUtil) continuam
+         funcionando 100% offline, sem essa permissão fazer diferença pra
+         eles. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".RestartApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Restart">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Usada só pra "Compartilhar" (ver MainActivity.compartilharFoto)
+             abrir o resultado com outro app sem expor um caminho file://
+             direto. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

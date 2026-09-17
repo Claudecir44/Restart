@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Restart</string>
+    <string name="cancelar">Cancelar</string>
+
+    <string name="tela_titulo">Restart</string>
+    <string name="tela_subtitulo">Restauração de fotos — local ou com IA na nuvem</string>
+    <string name="botao_escolher_foto">📷 Escolher foto</string>
+    <string name="botao_trocar_foto">Trocar foto</string>
+
+    <string name="efeitos_titulo">Efeitos locais (sem internet):</string>
+    <string name="botao_restaurar">✨ Restaurar (tudo)</string>
+    <string name="botao_nitidez">🔍 Nitidez</string>
+    <string name="botao_reduzir_ruido">🧹 Reduzir ruído</string>
+    <string name="botao_contraste_auto">🎨 Contraste automático</string>
+    <string name="botao_aumentar_resolucao">📐 Aumentar resolução (2x)</string>
+    <string name="botao_desfazer">↩ Desfazer</string>
+
+    <string name="rotulo_antes">ANTES</string>
+    <string name="rotulo_depois">DEPOIS</string>
+    <string name="processando">Processando…</string>
+
+    <string name="botao_salvar">💾 Salvar</string>
+    <string name="botao_compartilhar">📤 Compartilhar</string>
+
+    <string name="toast_selecione_foto_primeiro">Escolha uma foto primeiro.</string>
+    <string name="toast_salvo_sucesso">Salvo em Fotos/Restart.</string>
+    <string name="toast_erro_salvar">Erro ao salvar: %1$s</string>
+    <string name="toast_erro_processar">Erro ao processar: %1$s</string>
+    <string name="toast_nada_para_compartilhar">Salve a foto antes de compartilhar.</string>
+
+    <!-- ===== IA na nuvem (Replicate, ver functions/index.js) ===== -->
+    <string name="ia_nuvem_titulo">☁️ Efeitos com IA (nuvem)</string>
+    <string name="botao_ia_restaurar_rosto">🧑 Restaurar rosto (IA)</string>
+    <string name="botao_ia_colorir">🎨 Colorir (IA)</string>
+    <string name="botao_ia_aumentar_resolucao">🔍 Aumentar resolução (IA)</string>
+    <string name="botao_ia_remover_fundo">✂️ Remover fundo</string>
+    <string name="botao_ia_estilizar">🖌️ Estilizar…</string>
+    <string name="botao_ia_cor_cabelo">💇 Cor do cabelo…</string>
+    <string name="botao_ia_cor_olhos">👁️ Cor dos olhos…</string>
+    <string name="botao_ia_trocar_roupa">👕 Trocar roupa…</string>
+
+    <string name="ia_processando">Processando com IA na nuvem… pode levar até 1 minuto.</string>
+    <string name="ia_erro_formato">Erro na IA: %1$s</string>
+    <string name="ia_erro_sem_firebase">IA na nuvem ainda não configurada neste app.</string>
+    <string name="ia_escolha_estilo_titulo">Escolha o estilo</string>
+    <string name="ia_escolha_categoria_titulo">Essa roupa é…</string>
+    <string name="ia_escolha_cor_titulo">Escolha a cor</string>
+    <string name="ia_escolha_roupa_referencia">Agora escolha uma foto da roupa desejada</string>
+    <string name="ia_sem_mascara_para_regiao">Não foi possível identificar essa região na foto.</string>
+
+    <string-array name="ia_estilos_nomes">
+        <item>Pintura artística</item>
+        <item>Retrato profissional</item>
+        <item>Desenho</item>
+        <item>Lápis</item>
+        <item>Vintage</item>
+    </string-array>
+
+    <string-array name="ia_categorias_roupa_nomes">
+        <item>Parte de cima</item>
+        <item>Parte de baixo</item>
+        <item>Vestido</item>
+    </string-array>
+
+    <string-array name="ia_cores_cabelo_nomes">
+        <item>Preto</item>
+        <item>Castanho escuro</item>
+        <item>Castanho claro</item>
+        <item>Loiro</item>
+        <item>Ruivo</item>
+        <item>Grisalho</item>
+        <item>Azul</item>
+        <item>Verde</item>
+        <item>Roxo</item>
+        <item>Rosa</item>
+    </string-array>
+
+    <string-array name="ia_cores_olhos_nomes">
+        <item>Castanho escuro</item>
+        <item>Castanho claro</item>
+        <item>Azul</item>
+        <item>Verde</item>
+        <item>Cinza</item>
+        <item>Âmbar</item>
+        <item>Violeta</item>
+    </string-array>
+</resources>
